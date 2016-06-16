@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D41052121D12958100E80FD6 /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41052111D12958100E80FD6 /* SearchUserViewController.swift */; };
+		D41052141D12A03200E80FD6 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41052131D12A03200E80FD6 /* UserProfileViewController.swift */; };
+		D41052171D12A09A00E80FD6 /* UserIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41052151D12A09A00E80FD6 /* UserIconCell.swift */; };
+		D41052181D12A09A00E80FD6 /* UserIconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41052161D12A09A00E80FD6 /* UserIconCell.xib */; };
 		D4EF1CCA1D1161B500A9D84B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EF1CC81D1161B500A9D84B /* Main.storyboard */; };
 		D4EF1CCC1D1161B500A9D84B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EF1CCB1D1161B500A9D84B /* Assets.xcassets */; };
 		D4EF1CCF1D1161B500A9D84B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EF1CCD1D1161B500A9D84B /* LaunchScreen.storyboard */; };
@@ -44,8 +48,6 @@
 		D4F94CFF1D116EF100CB4590 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94CFE1D116EF100CB4590 /* ProfileViewController.swift */; };
 		D4F94D011D116F0000CB4590 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94D001D116F0000CB4590 /* ContactsViewController.swift */; };
 		D4F94D031D116F1E00CB4590 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94D021D116F1E00CB4590 /* ConversationViewController.swift */; };
-		D4F94D061D11750F00CB4590 /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94D041D11750F00CB4590 /* AddNewFriendViewController.swift */; };
-		D4F94D071D11750F00CB4590 /* AddNewFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F94D051D11750F00CB4590 /* AddNewFriendViewController.xib */; };
 		D4F94D0A1D11812A00CB4590 /* MakefriendRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94D081D11812A00CB4590 /* MakefriendRequestCell.swift */; };
 		D4F94D0B1D11812A00CB4590 /* MakefriendRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F94D091D11812A00CB4590 /* MakefriendRequestCell.xib */; };
 		D4F94D0D1D11A5A100CB4590 /* AVOSCloud.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4F94CA11D116A0000CB4590 /* AVOSCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -71,6 +73,10 @@
 		3173ADA2014C3532D4AA071F /* Pods-EasyChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyChat/Pods-EasyChat.debug.xcconfig"; sourceTree = "<group>"; };
 		3B57E57ADD9040AD316AE1F7 /* Pods-EasyChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyChat/Pods-EasyChat.release.xcconfig"; sourceTree = "<group>"; };
 		542D925CCF2506726167E502 /* Pods_EasyChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41052111D12958100E80FD6 /* SearchUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
+		D41052131D12A03200E80FD6 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		D41052151D12A09A00E80FD6 /* UserIconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIconCell.swift; sourceTree = "<group>"; };
+		D41052161D12A09A00E80FD6 /* UserIconCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserIconCell.xib; sourceTree = "<group>"; };
 		D4EF1CC11D1161B500A9D84B /* EasyChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4EF1CC91D1161B500A9D84B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4EF1CCB1D1161B500A9D84B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,8 +118,6 @@
 		D4F94CFE1D116EF100CB4590 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4F94D001D116F0000CB4590 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		D4F94D021D116F1E00CB4590 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
-		D4F94D041D11750F00CB4590 /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
-		D4F94D051D11750F00CB4590 /* AddNewFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewFriendViewController.xib; sourceTree = "<group>"; };
 		D4F94D081D11812A00CB4590 /* MakefriendRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakefriendRequestCell.swift; sourceTree = "<group>"; };
 		D4F94D091D11812A00CB4590 /* MakefriendRequestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MakefriendRequestCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,6 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				D4F94CFE1D116EF100CB4590 /* ProfileViewController.swift */,
+				D41052131D12A03200E80FD6 /* UserProfileViewController.swift */,
+				D41052151D12A09A00E80FD6 /* UserIconCell.swift */,
+				D41052161D12A09A00E80FD6 /* UserIconCell.xib */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -335,11 +342,10 @@
 		D4F94CFD1D116EB900CB4590 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				D4F94D041D11750F00CB4590 /* AddNewFriendViewController.swift */,
-				D4F94D051D11750F00CB4590 /* AddNewFriendViewController.xib */,
 				D4F94D001D116F0000CB4590 /* ContactsViewController.swift */,
 				D4F94D081D11812A00CB4590 /* MakefriendRequestCell.swift */,
 				D4F94D091D11812A00CB4590 /* MakefriendRequestCell.xib */,
+				D41052111D12958100E80FD6 /* SearchUserViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -417,9 +423,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F4A9EC1D1240A2004B3DBB /* ConversationCell.xib in Resources */,
+				D41052181D12A09A00E80FD6 /* UserIconCell.xib in Resources */,
 				D4F94CDB1D116A0000CB4590 /* SendMessageViewController.xib in Resources */,
 				D4F94D0B1D11812A00CB4590 /* MakefriendRequestCell.xib in Resources */,
-				D4F94D071D11750F00CB4590 /* AddNewFriendViewController.xib in Resources */,
 				D4EF1CCF1D1161B500A9D84B /* LaunchScreen.storyboard in Resources */,
 				D4EF1CCC1D1161B500A9D84B /* Assets.xcassets in Resources */,
 				D4F94CDD1D116A0000CB4590 /* LoginViewController.xib in Resources */,
@@ -482,9 +488,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F94D061D11750F00CB4590 /* AddNewFriendViewController.swift in Sources */,
 				D4F94CCB1D116A0000CB4590 /* IMCacheManager.swift in Sources */,
 				D4F94CD11D116A0000CB4590 /* Post.swift in Sources */,
+				D41052171D12A09A00E80FD6 /* UserIconCell.swift in Sources */,
 				D4F94CCA1D116A0000CB4590 /* Conversation.swift in Sources */,
 				D4F94CEA1D116A0000CB4590 /* FlowDataDelegate.swift in Sources */,
 				D4F94CC81D116A0000CB4590 /* AppDelegate.swift in Sources */,
@@ -492,9 +498,11 @@
 				D4F94CCC1D116A0000CB4590 /* IMManager.swift in Sources */,
 				D4F94CE91D116A0000CB4590 /* FlowBuilder.swift in Sources */,
 				D4F94CE81D116A0000CB4590 /* FlowBaseTableViewCell.swift in Sources */,
+				D41052141D12A03200E80FD6 /* UserProfileViewController.swift in Sources */,
 				D4F94CC71D116A0000CB4590 /* APPConfig.swift in Sources */,
 				D4F94CFF1D116EF100CB4590 /* ProfileViewController.swift in Sources */,
 				D4F94CDA1D116A0000CB4590 /* SendMessageViewController.swift in Sources */,
+				D41052121D12958100E80FD6 /* SearchUserViewController.swift in Sources */,
 				D4F4A9F11D125230004B3DBB /* UserCacheManager.swift in Sources */,
 				D4F94CE51D116A0000CB4590 /* Utility.swift in Sources */,
 				D4F94CC91D116A0000CB4590 /* SqliteDB.swift in Sources */,

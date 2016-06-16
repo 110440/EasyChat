@@ -149,4 +149,17 @@ extension AVUser{
     }
     
     //TODO: search user by name
+    func searchByUserName(name:String,block:(users:[AVUser]?,error:NSError?)->Void) {
+        let q = AVUser.query()
+        q.cachePolicy = .IgnoreCache
+        q.whereKey("username", containsString: name )
+        q.whereKey("objectId", notEqualTo: self.objectId)
+        q.findObjectsInBackgroundWithBlock { (objs, error) in
+            if error == nil {
+                block(users: objs as? [AVUser], error: nil)
+            }else{
+                block(users: nil, error: error)
+            }
+        }
+    }
 }

@@ -17,7 +17,8 @@ class ContactsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let addBtn = UIBarButtonItem(title: "增加对话", style: .Plain, target: self, action: #selector(self.addFriend))
+        self.title = "好友列表"
+        let addBtn = UIBarButtonItem(title: "增加好友", style: .Plain, target: self, action: #selector(self.addFriend))
         self.navigationItem.rightBarButtonItem = addBtn
         
         // register
@@ -44,7 +45,9 @@ class ContactsViewController: UITableViewController {
     }
     
     func addFriend(){
-        let vc = AddNewFriendViewController(nibName: "AddNewFriendViewController", bundle: nil)
+//        let vc = AddNewFriendViewController(nibName: "AddNewFriendViewController", bundle: nil)
+        let vc = SearchUserViewController()
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true )
     }
 
@@ -53,22 +56,21 @@ class ContactsViewController: UITableViewController {
         guard let user = AVUser.currentUser() else { return }
         user.getMakeFriendRequests({ (request, error) in
             if error == nil{
-                //print(request)
+                
                 self.makeFriendRequests = request!
                 self.tableView.reloadData()
                 
-                let count = String(request!.count)
-                print("friend request count: \(count)")
-                if request!.count > 0 {
-                    self.tabBarItem.badgeValue = count
+                let unreadCount = request!.filter{ $0.readed == false }.count
+                if unreadCount > 0 {
+                    self.tabBarItem.badgeValue = String(unreadCount)
+                    user.setAllMakeFriendRequestReaded({ (error) in
+                        if error != nil{
+                            print(error)
+                        }
+                    })
                 }else{
                     self.tabBarItem.badgeValue = nil
                 }
-                user.setAllMakeFriendRequestReaded({ (error) in
-                    if error != nil{
-                        print(error)
-                    }
-                })
             }else{
                 print(error)
             }
@@ -104,6 +106,7 @@ class ContactsViewController: UITableViewController {
         }else{
             cell = tableView.dequeueReusableCellWithIdentifier("friendCell", forIndexPath: indexPath)
             cell.textLabel?.text = self.friends[indexPath.row].username
+            cell.imageView?.image = UIImage(named: "plugins_FriendNotify")
         }
 
         return cell

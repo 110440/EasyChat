@@ -54,7 +54,7 @@ class RootViewController: UITabBarController  {
         let conversationController = ConversationViewController()
         let conversation = self.configViewController(conversationController, title: "对话", image: "tabbar_mainframe", selectImg: "tabbar_mainframeHL")
         
-        self.contactsController = ContactsViewController()
+        self.contactsController = ContactsViewController(style: .Grouped)
         let contacts = self.configViewController(self.contactsController!, title: "好友", image: "tabbar_contacts", selectImg: "tabbar_contactsHL")
         
         let profileController = ProfileViewController()
