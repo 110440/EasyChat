@@ -34,10 +34,17 @@ class ContactsViewController: UITableViewController {
     
     func getFriends(){
         guard let user = AVUser.currentUser() else { return }
+        let friends = AVUser.userCache.getAllUserFromCacheIgnoreSelf()
+        self.friends = friends
+        self.tableView.reloadData()
+        
         user.getAllFriends { (friends, error) in
             if error == nil{
                 self.friends = friends!
                 self.tableView.reloadData()
+                dispatch_async(dispatch_get_global_queue(0, 0)){
+                    AVUser.userCache.updateUsers(friends!)
+                }
             }else{
                 print(error)
             }

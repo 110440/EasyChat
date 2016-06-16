@@ -8,6 +8,7 @@
 
 import UIKit
 import AVOSCloud
+import AVOSCloudIM
 
 private let profileViewWidth:CGFloat = UIScreen.mainScreen().bounds.width * 2/3
 
@@ -27,6 +28,7 @@ class RootViewController: UITabBarController  {
         self.navigationController?.navigationBar.shadowImage = UIImage()
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.getMakeFriendRequest), name: IMNotifycationMakeFriendRequest, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.recveNewMsg(_:)), name: IMNotifycationRecvNewMessage, object: nil)
         
         self.setupViewController()
         self.connectToIM()
@@ -35,6 +37,17 @@ class RootViewController: UITabBarController  {
 
     func getMakeFriendRequest() {
         self.contactsController!.getMakeFriendRequest()
+    }
+    
+    // 更新好友　
+    func recveNewMsg(n:NSNotification){
+        let message = n.object as! AVIMTypedMessage
+        let userID = message.clientId
+        AVUser.userCache.userByID(userID) { (user, error) in
+            if error != nil{
+                print(error)
+            }
+        }
     }
     
     func connectToIM(){
@@ -57,7 +70,7 @@ class RootViewController: UITabBarController  {
         self.contactsController = ContactsViewController(style: .Grouped)
         let contacts = self.configViewController(self.contactsController!, title: "好友", image: "tabbar_contacts", selectImg: "tabbar_contactsHL")
         
-        let profileController = ProfileViewController()
+        let profileController = MeViewController(style: .Grouped)
         let profile = self.configViewController(profileController, title: "我", image: "tabbar_me", selectImg: "tabbar_meHL")
         
         self.viewControllers = [conversation,contacts,profile]

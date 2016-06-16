@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
         let password = self.passwordFeild.text
         
         if userName?.characters.count > 0 && password?.characters.count > 0{
+            print("正在登陆...")
             AVUser.loginInBackground(userName!, password: password!, block: { (user, error) in
                 if error == nil{
                     IMManager.instance.connectToSever(AVUser.currentUser().objectId) { (error) in

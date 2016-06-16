@@ -17,6 +17,7 @@
 		D4F4A9EC1D1240A2004B3DBB /* ConversationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F4A9EA1D1240A2004B3DBB /* ConversationCell.xib */; };
 		D4F4A9EF1D1240B8004B3DBB /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4A9EE1D1240B8004B3DBB /* ConversationCell.swift */; };
 		D4F4A9F11D125230004B3DBB /* UserCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4A9F01D125230004B3DBB /* UserCacheManager.swift */; };
+		D4F818C81D12E52100D9E8DF /* MCPhotographyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F818C71D12E52100D9E8DF /* MCPhotographyHelper.m */; };
 		D4F94CC71D116A0000CB4590 /* APPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94C901D116A0000CB4590 /* APPConfig.swift */; };
 		D4F94CC81D116A0000CB4590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94C911D116A0000CB4590 /* AppDelegate.swift */; };
 		D4F94CC91D116A0000CB4590 /* SqliteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94C941D116A0000CB4590 /* SqliteDB.swift */; };
@@ -45,7 +46,7 @@
 		D4F94CEC1D116A0000CB4590 /* FlowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94CC51D116A0000CB4590 /* FlowTableViewController.swift */; };
 		D4F94CF11D116A1A00CB4590 /* AVOSCloudIM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4F94CA21D116A0000CB4590 /* AVOSCloudIM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D4F94CF71D116B0C00CB4590 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F94CF61D116B0C00CB4590 /* libsqlite3.tbd */; };
-		D4F94CFF1D116EF100CB4590 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94CFE1D116EF100CB4590 /* ProfileViewController.swift */; };
+		D4F94CFF1D116EF100CB4590 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94CFE1D116EF100CB4590 /* MeViewController.swift */; };
 		D4F94D011D116F0000CB4590 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94D001D116F0000CB4590 /* ContactsViewController.swift */; };
 		D4F94D031D116F1E00CB4590 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94D021D116F1E00CB4590 /* ConversationViewController.swift */; };
 		D4F94D0A1D11812A00CB4590 /* MakefriendRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94D081D11812A00CB4590 /* MakefriendRequestCell.swift */; };
@@ -85,6 +86,8 @@
 		D4F4A9EA1D1240A2004B3DBB /* ConversationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationCell.xib; sourceTree = "<group>"; };
 		D4F4A9EE1D1240B8004B3DBB /* ConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		D4F4A9F01D125230004B3DBB /* UserCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCacheManager.swift; sourceTree = "<group>"; };
+		D4F818C61D12E52100D9E8DF /* MCPhotographyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPhotographyHelper.h; sourceTree = "<group>"; };
+		D4F818C71D12E52100D9E8DF /* MCPhotographyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPhotographyHelper.m; sourceTree = "<group>"; };
 		D4F94C901D116A0000CB4590 /* APPConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPConfig.swift; sourceTree = "<group>"; };
 		D4F94C911D116A0000CB4590 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4F94C941D116A0000CB4590 /* SqliteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqliteDB.swift; sourceTree = "<group>"; };
@@ -115,7 +118,7 @@
 		D4F94CC51D116A0000CB4590 /* FlowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowTableViewController.swift; sourceTree = "<group>"; };
 		D4F94CF31D116AE700CB4590 /* EasyChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyChat-Bridging-Header.h"; sourceTree = "<group>"; };
 		D4F94CF61D116B0C00CB4590 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		D4F94CFE1D116EF100CB4590 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D4F94CFE1D116EF100CB4590 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		D4F94D001D116F0000CB4590 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		D4F94D021D116F1E00CB4590 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		D4F94D081D11812A00CB4590 /* MakefriendRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakefriendRequestCell.swift; sourceTree = "<group>"; };
@@ -179,6 +182,15 @@
 				D4F94CF31D116AE700CB4590 /* EasyChat-Bridging-Header.h */,
 			);
 			path = EasyChat;
+			sourceTree = "<group>";
+		};
+		D4F818C51D12E52100D9E8DF /* photoHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D4F818C61D12E52100D9E8DF /* MCPhotographyHelper.h */,
+				D4F818C71D12E52100D9E8DF /* MCPhotographyHelper.m */,
+			);
+			path = photoHelper;
 			sourceTree = "<group>";
 		};
 		D4F94C8F1D116A0000CB4590 /* Application */ = {
@@ -282,7 +294,7 @@
 		D4F94CB31D116A0000CB4590 /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				D4F94CFE1D116EF100CB4590 /* ProfileViewController.swift */,
+				D4F94CFE1D116EF100CB4590 /* MeViewController.swift */,
 				D41052131D12A03200E80FD6 /* UserProfileViewController.swift */,
 				D41052151D12A09A00E80FD6 /* UserIconCell.swift */,
 				D41052161D12A09A00E80FD6 /* UserIconCell.xib */,
@@ -301,6 +313,7 @@
 		D4F94CB81D116A0000CB4590 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D4F818C51D12E52100D9E8DF /* photoHelper */,
 				D4F94CB91D116A0000CB4590 /* Color.swift */,
 				D4F94CBA1D116A0000CB4590 /* NSTimer+block.swift */,
 				D4F94CBB1D116A0000CB4590 /* TableViewDelegate.swift */,
@@ -500,7 +513,7 @@
 				D4F94CE81D116A0000CB4590 /* FlowBaseTableViewCell.swift in Sources */,
 				D41052141D12A03200E80FD6 /* UserProfileViewController.swift in Sources */,
 				D4F94CC71D116A0000CB4590 /* APPConfig.swift in Sources */,
-				D4F94CFF1D116EF100CB4590 /* ProfileViewController.swift in Sources */,
+				D4F94CFF1D116EF100CB4590 /* MeViewController.swift in Sources */,
 				D4F94CDA1D116A0000CB4590 /* SendMessageViewController.swift in Sources */,
 				D41052121D12958100E80FD6 /* SearchUserViewController.swift in Sources */,
 				D4F4A9F11D125230004B3DBB /* UserCacheManager.swift in Sources */,
@@ -517,6 +530,7 @@
 				D4F94D031D116F1E00CB4590 /* ConversationViewController.swift in Sources */,
 				D4F94CEB1D116A0000CB4590 /* FlowDataSection.swift in Sources */,
 				D4F94CCF1D116A0000CB4590 /* File.swift in Sources */,
+				D4F818C81D12E52100D9E8DF /* MCPhotographyHelper.m in Sources */,
 				D4F4A9EF1D1240B8004B3DBB /* ConversationCell.swift in Sources */,
 				D4F94CE31D116A0000CB4590 /* NSTimer+block.swift in Sources */,
 				D4F94CCD1D116A0000CB4590 /* Message.swift in Sources */,

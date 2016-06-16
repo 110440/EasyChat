@@ -3,4 +3,5 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MCPhotographyHelper.h"
 #import "sqlite3.h"

@@ -40,6 +40,7 @@ class ConversationViewController: UIViewController,UITableViewDataSource,UITable
     func openChat(){
         self.tabBarController?.selectedIndex = 0
         let vc = SendMessageViewController(nibName: "SendMessageViewController", bundle: nil)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true )
     }
     
@@ -72,7 +73,6 @@ class ConversationViewController: UIViewController,UITableViewDataSource,UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ConversationCell
         let conversation = self.conversations[indexPath.row]
-        //cell.textLabel?.text = conversation.conversationShowName + " 消息数(\(conversation.unreadCount))"
         cell.configCell(conversation)
         return cell
     }

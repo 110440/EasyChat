@@ -181,6 +181,19 @@ class IMManager:NSObject {
     
     
    //MARK: Message
+    
+//    func sayHiToUser(userID:String,block:(error:NSError?)->Void){
+//        self.createSingleConversation(userID, name: "", block: { (conversation, error) in
+//            if error == nil{
+//                self.currentConversation = conversation
+//                block(error: nil)
+//                NSNotificationCenter.defaultCenter().postNotificationName(notifycationMsg_openChat, object: nil)
+//            }else{
+//                block(error: error)
+//            }
+//        })
+//    }
+    
     func sendMessageToCurrentConversation(msg:AVIMTextMessage,block:(error:NSError?)->Void){
         guard let conversation = self.currentConversation else { return }
         self.dataCache.appendMessage(conversation.conversationId, msg: msg)

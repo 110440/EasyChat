@@ -8,6 +8,7 @@
 
 import UIKit
 import AVOSCloudIM
+import AVOSCloud
 
 class ConversationCell: UITableViewCell {
 
@@ -33,5 +34,12 @@ class ConversationCell: UITableViewCell {
         self.nameLab.text = conversation.conversationShowName
         self.lastMsgLab.text = conversation.lastMessage?.text
         self.unreadCountLab.text = String(conversation.unreadCount)
+        if let friendID = conversation.friendID{
+            AVUser.userCache.userByID(friendID, block: { (user, error) in
+                if error == nil{
+                    self.nameLab.text = user?.username
+                }
+            })
+        }
     }
 }

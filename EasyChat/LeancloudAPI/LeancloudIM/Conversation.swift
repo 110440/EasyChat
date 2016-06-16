@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//import AVOSCloud
 import AVOSCloudIM
 
 private var unreadCountkey: Void?
@@ -43,6 +44,17 @@ extension AVIMConversation{
         }
     }
     
+    var friendID:String?{
+        if self.conversationType == ConversationType.Single{
+            for id in self.members as! [String]{
+                if id  != IM.imClient!.clientId{
+                    return id
+                }
+            }
+        }
+        return "群聊"
+    }
+        
     var conversationShowName:String{
         var name = ""
         for m in self.members{

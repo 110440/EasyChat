@@ -25,7 +25,7 @@ class SqliteDB{
     
     init(name:String){
         self.dbPath = DocPath.stringByAppendingPathComponent(name)
-        print(DocPath)
+        //print(DocPath)
     }
     
     deinit{

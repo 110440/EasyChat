@@ -9,15 +9,18 @@
 import Foundation
 import AVOSCloud
 
+var userCache:UserCacheManager!
+
 extension AVUser{
     
-    class func signUpInBackground(email:String,password:String,block:(user:AVUser?, error:NSError?)->Void){
+    class func signUpInBackground(userName:String,password:String,block:(user:AVUser?, error:NSError?)->Void){
         let  user       = AVUser()
-//        user.email      = email
-        user.username   = email
+        //user.email      = email
+        user.username   = userName
         user.password   = password
         user.signUpInBackgroundWithBlock { (succeeded, error) in
             if succeeded{
+                AVUser.userCache.updateUser(user)
                 block(user: user, error: nil)
             }else{
                 block(user: nil,error: error)
@@ -28,6 +31,7 @@ extension AVUser{
     class func loginInBackground(user:String,password:String,block:(user:AVUser?, error:NSError?)->Void){
         AVUser.logInWithUsernameInBackground(user, password: password) { (user, error) in
             if user != nil{
+                AVUser.userCache.updateUser(user)
                 block(user: user, error: nil)
             }else{
                 block(user: nil, error: error)
@@ -131,6 +135,7 @@ extension AVUser{
         let followee = {
             self.follow(request.fromUser!.objectId, andCallback: { (succeeded, error) in
                 if succeeded {
+                    AVUser.userCache.updateUser(request.fromUser!)
                     block(error: nil)
                 }else{
                     block(error: error)
@@ -148,7 +153,6 @@ extension AVUser{
         }
     }
     
-    //TODO: search user by name
     func searchByUserName(name:String,block:(users:[AVUser]?,error:NSError?)->Void) {
         let q = AVUser.query()
         q.cachePolicy = .IgnoreCache
@@ -162,4 +166,72 @@ extension AVUser{
             }
         }
     }
+    
+    func updateFromNet(block:(user:AVUser?,error:NSError?)->Void){
+        let q = AVUser.query()
+        q.whereKey("objectId", equalTo: self.objectId)
+        q.findObjectsInBackgroundWithBlock { (objs, error) in
+            if error == nil{
+                block(user: objs.first as? AVUser, error: nil)
+            }else{
+                block(user: nil, error: error)
+            }
+        }
+    }
 }
+
+//MARK: - 自定义属性
+private let avatarKey = "avatarKey"
+extension AVUser{
+    
+    var avatar:String?{
+        set{
+            self.setObject(newValue, forKey: avatarKey)
+        }
+        get{
+            return self.objectForKey(avatarKey) as? String
+        }
+    }
+    
+    static var userCache:UserCacheManager{
+        return UserCacheManager(userID: AVUser.currentUser().objectId)
+    }
+}
+
+//MARK:- ToDictionary
+
+extension AVUser{
+
+    // dictionary
+    func toDictionary()->[String:AnyObject]{
+        
+        var dictionary = [String:AnyObject]()
+        let allKey = self.allKeys()
+        
+        for key in allKey as! [String]{
+            let value = self.objectForKey(key)
+            dictionary[key] = value
+        }
+        dictionary["objectId"] = self.objectId
+        dictionary["username"] = self.username
+        return dictionary
+    }
+    
+    convenience init(dictionary:Dictionary<String,AnyObject>) {
+        self.init()
+        self.objectId = dictionary["objectId"] as! String
+        self.username = dictionary["username"] as? String
+        
+        for (key,value) in dictionary{
+            if key != "objectId" && key != "username" {
+                self.setObject(value, forKey: key)
+            }
+        }
+    }
+}
+
+
+
+
+
+
