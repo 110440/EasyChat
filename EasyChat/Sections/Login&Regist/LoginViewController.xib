@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="coder" customModuleProvider="target">
+            <connections>
+                <outlet property="passwordFeild" destination="lDo-8L-YBE" id="gVQ-u2-g9C"/>
+                <outlet property="userNameFeild" destination="UB9-1o-wdI" id="4Ij-1T-Tyk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UB9-1o-wdI">
+                    <rect key="frame" x="50" y="56" width="220" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lDo-8L-YBE">
+                    <rect key="frame" x="50" y="104" width="220" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSY-wd-gDv">
+                    <rect key="frame" x="50" y="149" width="220" height="30"/>
+                    <state key="normal" title="登陆"/>
+                    <connections>
+                        <action selector="login:" destination="-1" eventType="touchUpInside" id="C5c-WV-2xW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSu-so-V32">
+                    <rect key="frame" x="50" y="193" width="220" height="30"/>
+                    <state key="normal" title="注册"/>
+                    <connections>
+                        <action selector="singin:" destination="-1" eventType="touchUpInside" id="2Xz-3r-c4X"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="qSY-wd-gDv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="5G8-dt-wfh"/>
+                <constraint firstItem="oSu-so-V32" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="8Kh-7s-pBJ"/>
+                <constraint firstAttribute="trailing" secondItem="UB9-1o-wdI" secondAttribute="trailing" constant="50" id="HV1-b5-2pp"/>
+                <constraint firstItem="lDo-8L-YBE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="Iqw-Zt-OmH"/>
+                <constraint firstAttribute="trailing" secondItem="lDo-8L-YBE" secondAttribute="trailing" constant="50" id="JPz-kF-2hW"/>
+                <constraint firstAttribute="trailing" secondItem="qSY-wd-gDv" secondAttribute="trailing" constant="50" id="Kcn-Qh-gSd"/>
+                <constraint firstItem="oSu-so-V32" firstAttribute="top" secondItem="qSY-wd-gDv" secondAttribute="bottom" constant="14" id="QoK-Zf-Wf6"/>
+                <constraint firstItem="qSY-wd-gDv" firstAttribute="top" secondItem="lDo-8L-YBE" secondAttribute="bottom" constant="24" id="VqX-hg-L1G"/>
+                <constraint firstItem="UB9-1o-wdI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="bTV-0z-I0e"/>
+                <constraint firstAttribute="trailing" secondItem="oSu-so-V32" secondAttribute="trailing" constant="50" id="i1d-A0-dlY"/>
+                <constraint firstItem="lDo-8L-YBE" firstAttribute="top" secondItem="UB9-1o-wdI" secondAttribute="bottom" constant="27" id="m0M-xc-laF"/>
+                <constraint firstItem="UB9-1o-wdI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="56" id="nyf-Ax-XJX"/>
+            </constraints>
+            <point key="canvasLocation" x="375" y="239"/>
+        </view>
+    </objects>
+</document>

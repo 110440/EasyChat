@@ -1,0 +1,65 @@
+//
+//  Color.swift
+//  coder
+//
+//  Created by tanson on 16/6/7.
+//  Copyright © 2016年 tanson. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+extension UIColor {
+    
+    class func hexStr (hexStr : NSString, alpha : CGFloat) -> UIColor {
+        
+        let hexStr = hexStr.stringByReplacingOccurrencesOfString("#", withString: "")
+        let scanner = NSScanner(string: hexStr as String)
+        var color: UInt32 = 0
+        if scanner.scanHexInt(&color) {
+            let r = CGFloat((color & 0xFF0000) >> 16) / 255.0
+            let g = CGFloat((color & 0x00FF00) >> 8) / 255.0
+            let b = CGFloat(color & 0x0000FF) / 255.0
+            return UIColor(red:r,green:g,blue:b,alpha:alpha)
+        } else {
+            print("invalid hex string", terminator: "")
+            return UIColor.whiteColor();
+        }
+    }
+    
+    class func navigationBarTitleTextColor() -> UIColor {
+        return UIColor.hexStr("ffffff", alpha: 1)
+    }
+    
+    class func navigationBarBackgroundColor() -> UIColor {
+        return UIColor.hexStr("EA4C89", alpha: 0.85)
+    }
+    
+    class func scrollMenuBackgroundColor() -> UIColor {
+        return UIColor.hexStr("ECEFF1", alpha: 1)
+    }
+    
+    class func viewBackgroundColor() -> UIColor {
+        return UIColor.hexStr("263238", alpha: 1)
+    }
+    
+    class func selectionIndicatorColor() -> UIColor {
+        return UIColor.hexStr("F06292", alpha: 1)
+    }
+    
+    class func bottomMenuHairlineColor() -> UIColor {
+        return UIColor.hexStr("F06292", alpha: 1)
+    }
+    
+    class func selectedMenuItemLabelColor() -> UIColor {
+        return UIColor.hexStr("37474F", alpha: 1)
+    }
+    
+    class func unselectedMenuItemLabelColor() -> UIColor {
+        return UIColor.hexStr("607D8B", alpha: 1)
+    }
+    
+    class func cellLabelColor() -> UIColor {
+        return UIColor.hexStr("546E7A", alpha: 1)
+    }
+}
