@@ -9,6 +9,8 @@
 import UIKit
 import AVOSCloudIM
 import AVOSCloud
+import Kingfisher
+
 
 class ConversationCell: UITableViewCell {
 
@@ -38,6 +40,7 @@ class ConversationCell: UITableViewCell {
             AVUser.userCache.userByID(friendID, block: { (user, error) in
                 if error == nil{
                     self.nameLab.text = user?.username
+                    self.iconView.kf_setImageWithURL(NSURL(string: user!.avatar ?? "")!)
                 }
             })
         }

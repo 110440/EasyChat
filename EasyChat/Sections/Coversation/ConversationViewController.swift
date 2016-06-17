@@ -86,11 +86,7 @@ class ConversationViewController: UIViewController,UITableViewDataSource,UITable
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let conversation = self.conversations[indexPath.row]
-        IM.currentConversation = conversation
-        //let vc = SendMessageViewController(nibName: "SendMessageViewController", bundle: nil)
-        //let vc = ChatViewController()
-        //vc.hidesBottomBarWhenPushed = true
-        //self.navigationController?.pushViewController(vc, animated: true )
+        IM.currentConversation = conversation 
         self.openChat()
     }
 }
