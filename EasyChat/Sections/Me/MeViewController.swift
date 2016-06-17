@@ -8,11 +8,17 @@
 
 import UIKit
 import AVOSCloud
+import Kingfisher
 
 private let settings = ["资料","什么","又什么"]
 
 class MeViewController: UITableViewController {
 
+    var photoHelper:MCPhotographyHelper = {
+        let helper = MCPhotographyHelper()
+        return helper
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,6 +55,7 @@ class MeViewController: UITableViewController {
             cell = tableView.dequeueReusableCellWithIdentifier("icon")
             (cell as! UserIconCell).nameLab.text = user?.username
             (cell as! UserIconCell).idLab.text = user?.objectId
+            (cell as! UserIconCell).iconVIew.kf_setImageWithURL(NSURL(string: user.avatar ?? "")!)
         }else{
             cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
             cell?.textLabel?.text = settings[indexPath.row]
@@ -59,8 +66,29 @@ class MeViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if indexPath.section == 0 {
-            
+        if indexPath.section == 0 && indexPath.row == 0 {
+            self.photoHelper.showOnPickerViewControllerOnViewController(self, completion: { (image) in
+                if let selectImg = image{
+                    let newImage = selectImg.imageByResizeToSize(CGSize(width: 50, height: 50))
+                    let data = UIImagePNGRepresentation(newImage!)
+                    let file = AVFile(data: data)
+                    print("上传图片...")
+                    file.saveInBackgroundWithBlock({ (ok, error) in
+                        if ok{
+                            AVUser.currentUser().avatar = file.url
+                            AVUser.currentUser().saveInBackgroundWithBlock({ (ok, error) in
+                                if ok {
+                                    let al = UIAlertView(title: nil, message: "更换头像成功", delegate: nil, cancelButtonTitle: "OK")
+                                    al.show()
+                                    self.tableView.reloadData()
+                                }else{
+                                    print(error)
+                                }
+                            })
+                        }
+                    })
+                }
+            })
         }
     }
 

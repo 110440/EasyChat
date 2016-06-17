@@ -17,6 +17,7 @@
 		D4F4A9EC1D1240A2004B3DBB /* ConversationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F4A9EA1D1240A2004B3DBB /* ConversationCell.xib */; };
 		D4F4A9EF1D1240B8004B3DBB /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4A9EE1D1240B8004B3DBB /* ConversationCell.swift */; };
 		D4F4A9F11D125230004B3DBB /* UserCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4A9F01D125230004B3DBB /* UserCacheManager.swift */; };
+		D4F659591D13928800E2DA37 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F659581D13928800E2DA37 /* Image.swift */; };
 		D4F818C81D12E52100D9E8DF /* MCPhotographyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F818C71D12E52100D9E8DF /* MCPhotographyHelper.m */; };
 		D4F94CC71D116A0000CB4590 /* APPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94C901D116A0000CB4590 /* APPConfig.swift */; };
 		D4F94CC81D116A0000CB4590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F94C911D116A0000CB4590 /* AppDelegate.swift */; };
@@ -86,6 +87,7 @@
 		D4F4A9EA1D1240A2004B3DBB /* ConversationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationCell.xib; sourceTree = "<group>"; };
 		D4F4A9EE1D1240B8004B3DBB /* ConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		D4F4A9F01D125230004B3DBB /* UserCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCacheManager.swift; sourceTree = "<group>"; };
+		D4F659581D13928800E2DA37 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		D4F818C61D12E52100D9E8DF /* MCPhotographyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPhotographyHelper.h; sourceTree = "<group>"; };
 		D4F818C71D12E52100D9E8DF /* MCPhotographyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPhotographyHelper.m; sourceTree = "<group>"; };
 		D4F94C901D116A0000CB4590 /* APPConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPConfig.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				D4F94CBA1D116A0000CB4590 /* NSTimer+block.swift */,
 				D4F94CBB1D116A0000CB4590 /* TableViewDelegate.swift */,
 				D4F94CBC1D116A0000CB4590 /* Utility.swift */,
+				D4F659581D13928800E2DA37 /* Image.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				D4F94CC71D116A0000CB4590 /* APPConfig.swift in Sources */,
 				D4F94CFF1D116EF100CB4590 /* MeViewController.swift in Sources */,
 				D4F94CDA1D116A0000CB4590 /* SendMessageViewController.swift in Sources */,
+				D4F659591D13928800E2DA37 /* Image.swift in Sources */,
 				D41052121D12958100E80FD6 /* SearchUserViewController.swift in Sources */,
 				D4F4A9F11D125230004B3DBB /* UserCacheManager.swift in Sources */,
 				D4F94CE51D116A0000CB4590 /* Utility.swift in Sources */,

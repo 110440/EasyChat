@@ -18,9 +18,6 @@ class ConversationViewController: UIViewController,UITableViewDataSource,UITable
         view.dataSource = self
         view.delegate = self
         view.registerNib(UINib(nibName: "ConversationCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.openChat), name:notifycationMsg_openChat, object: nil)
-        
         return view
     }()
     
@@ -30,8 +27,8 @@ class ConversationViewController: UIViewController,UITableViewDataSource,UITable
         self.title = "对话列表"
         self.view.addSubview(self.tableView)
     
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.updateList(_:)), name: IMNotifycationrFleshConversation, object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.updateList), name: IMNotifycationrFleshConversation, object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.openChat), name:notifycationMsg_openChat, object: nil)
     }
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -44,16 +41,25 @@ class ConversationViewController: UIViewController,UITableViewDataSource,UITable
         self.navigationController?.pushViewController(vc, animated: true )
     }
     
-    func updateList(n:NSNotification){
+    
+    func updateList(){
+        
         self.conversations = IM.getAllRecentConversationFromCache()
         self.tableView.reloadData()
+        var unreadCount = 0
+        for conversation in self.conversations{
+            unreadCount += conversation.unreadCount
+        }
+        if unreadCount > 0 {
+            self.tabBarItem.badgeValue = String(unreadCount)
+        }else{
+            self.tabBarItem.badgeValue = nil
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        //
-        self.conversations = IM.getAllRecentConversationFromCache()
-        self.tableView.reloadData()
+        self.updateList()
     }
     
     override func didReceiveMemoryWarning() {
