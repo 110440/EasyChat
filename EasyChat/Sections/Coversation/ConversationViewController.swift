@@ -36,7 +36,8 @@ class ConversationViewController: UIViewController,UITableViewDataSource,UITable
     
     func openChat(){
         self.tabBarController?.selectedIndex = 0
-        let vc = SendMessageViewController(nibName: "SendMessageViewController", bundle: nil)
+        //let vc = SendMessageViewController(nibName: "SendMessageViewController", bundle: nil)
+        let vc = ChatViewController()
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true )
     }
@@ -85,8 +86,11 @@ class ConversationViewController: UIViewController,UITableViewDataSource,UITable
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let conversation = self.conversations[indexPath.row]
-        IMManager.instance.currentConversation = conversation
-        let vc = SendMessageViewController(nibName: "SendMessageViewController", bundle: nil)
-        self.navigationController?.pushViewController(vc, animated: true )
+        IM.currentConversation = conversation
+        //let vc = SendMessageViewController(nibName: "SendMessageViewController", bundle: nil)
+        //let vc = ChatViewController()
+        //vc.hidesBottomBarWhenPushed = true
+        //self.navigationController?.pushViewController(vc, animated: true )
+        self.openChat()
     }
 }

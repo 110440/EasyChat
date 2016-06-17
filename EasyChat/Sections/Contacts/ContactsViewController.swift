@@ -108,7 +108,7 @@ class ContactsViewController: UITableViewController {
             cell = tableView.dequeueReusableCellWithIdentifier("requestCell", forIndexPath: indexPath)
             let request = self.makeFriendRequests[indexPath.row]
             cell.textLabel?.text = request.fromUser?.username
-            cell.detailTextLabel?.text = request.helloMsg
+            cell.detailTextLabel?.text = request.helloMsg! + "     点击同意加为好友"
             
         }else{
             cell = tableView.dequeueReusableCellWithIdentifier("friendCell", forIndexPath: indexPath)
@@ -173,6 +173,13 @@ class ContactsViewController: UITableViewController {
         return 50
     }
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "好友申请"
+        }else{
+            return "我的好友"
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

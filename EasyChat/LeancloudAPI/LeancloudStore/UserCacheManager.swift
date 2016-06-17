@@ -66,7 +66,7 @@ class  UserCacheManager: NSObject {
         }
     }
     
-    func userByID(userID:String,block:(user:AVUser?,error:NSError?)->Void){
+    func userByID(userID:String)->AVUser?{
         
         let sql = "SELECT * from \(tableName) where \(f_userID) = '\(userID)' Limit 1"
         let (resultSet, err) = self.DB.executeQuery(sql)
@@ -82,6 +82,12 @@ class  UserCacheManager: NSObject {
         } else {
             print("sqlite err : \( SqliteError.errorMessageFromCode(err!) )")
         }
+        return user
+    }
+    
+    func userByID(userID:String,block:(user:AVUser?,error:NSError?)->Void){
+        
+        let user = self.userByID(userID)
         if user == nil {
             let user = AVUser(objectId: userID)
             user.updateFromNet({ (user, error) in

@@ -20,7 +20,6 @@ extension AVUser{
         user.password   = password
         user.signUpInBackgroundWithBlock { (succeeded, error) in
             if succeeded{
-                AVUser.userCache.updateUser(user)
                 block(user: user, error: nil)
             }else{
                 block(user: nil,error: error)
@@ -31,7 +30,6 @@ extension AVUser{
     class func loginInBackground(user:String,password:String,block:(user:AVUser?, error:NSError?)->Void){
         AVUser.logInWithUsernameInBackground(user, password: password) { (user, error) in
             if user != nil{
-                AVUser.userCache.updateUser(user)
                 block(user: user, error: nil)
             }else{
                 block(user: nil, error: error)
